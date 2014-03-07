@@ -4,25 +4,17 @@
 #include <cstdlib>
 #include <unistd.h>
 
-#include "Observer.h"
+#include "Visitor.h"
 
 int main(int argc,char* argv[])
 {
-	Observer* p1 = new ConcreateObserver();
-	Observer* p2 = new ConcreateObserver();
+	Visitor* pVisitorA = new ConcreateVisitorA();
+	Element* pElement = new ConcreateElementA();
 
-	Subject* p = new ConcreateSubject();
-	p->Attach(p1);
-	p->Attach(p2);
-	p->SetState(4);
-	p->Notify();
+	pElement->Accept(*pVisitorA);
 
-	p->Detach(p1);
-	p->SetState(10);
-	p->Notify();
-
-	delete p1;
-	delete p;
+	delete pElement;
+	delete pVisitorA;
 
 	return 0;
 }

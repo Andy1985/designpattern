@@ -7,7 +7,7 @@ OBJS = test.o Factory.o AbstractFactory.o Builder.o \
 		Prototype.o Singleton.o Adapter.o Bridge.o \
 		Composite.o Decorator.o Proxy.o TemplateMethod.o \
 		ChainOfResponsibility.o Flyweight.o Command.o \
-		Observer.o
+		Observer.o Iterator.o Memento.o Visitor.o
 TARGET = test
 
 all: $(TARGET)
